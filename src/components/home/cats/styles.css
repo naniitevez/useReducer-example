@@ -1,0 +1,36 @@
+.cats-component_container {
+  align-self: center;
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cat-component {
+  width: 130px;
+  border: 2px solid white;
+  border-radius: 8px;
+  margin: 5px;
+  padding: 10px 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.image-container img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cat-tags_container {
+  padding: 10px 0;
+}
+
+.tag {
+  border: 1px solid white;
+  margin: 4px 0;
+  border-radius: 20px;
+  padding: 5px 0;
+  font-size: 13px;
+}
