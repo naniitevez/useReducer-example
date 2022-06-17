@@ -8,8 +8,10 @@ const CatsContainer: React.FC = () => {
     return (
         <div className="cats-component_container">
           {state.cat.cats.map((cat) => {
+            const isFavourite = state.cat.favouriteCats.includes(cat.id)
+
             return (
-              <CatItem key={cat.id} id={cat.id} tags={cat.tags} />
+              <CatItem key={cat.id} id={cat.id} tags={cat.tags} isFavourite={isFavourite} />
             );
           })}
         </div>

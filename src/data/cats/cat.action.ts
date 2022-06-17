@@ -1,6 +1,6 @@
 import { Cat } from "../models/Cat";
 import { ActionType } from "../../utils/types";
-import { getCatsData } from "./cat.api";
+import { getCatsData, setInLocalStorage } from "./cat.api";
 
 export const loadCats = () => async (dispatch: React.Dispatch<any>) => {
   dispatch(setLoading(true));
@@ -23,6 +23,16 @@ export const setCats = (cats: Cat[]) =>
     cats,
   } as const);
 
+export const setFavouriteCats = (id: string) => {
+  setInLocalStorage(id)
+  
+  return {
+    type: "set-favourite-cats",
+    id
+  } as const;
+};
+
 export type CatActions =
   | ActionType<typeof setLoading>
-  | ActionType<typeof setCats>;
+  | ActionType<typeof setCats>
+  | ActionType<typeof setFavouriteCats>;

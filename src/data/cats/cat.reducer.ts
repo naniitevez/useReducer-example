@@ -7,5 +7,7 @@ export function catReducer(state: CatState, action: CatActions) {
       return { ...state, cats: action.cats };
     case "set-loading":
       return { ...state, isLoading: action.isLoading };
+    case "set-favourite-cats":
+      return { ...state, favouriteCats: [...state.favouriteCats, action.id]  };
   }
 }

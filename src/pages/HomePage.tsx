@@ -10,6 +10,12 @@ const HomePage: React.FC = () => {
     dispatch(loadCats);
   }, []);
 
+  useEffect(() => {
+
+    console.log("favoritos", state.cat.favouriteCats)
+  }, [state.cat.favouriteCats])
+  
+
   const handleOnClick = () => {
     dispatch(setLoading(!state.cat.isLoading));
   };
